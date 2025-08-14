@@ -19,9 +19,13 @@ jobs:
         with:
           node-version: 18
 
-      - name: Install dependencies
+      - name: Remove package-lock.json to avoid npm ci
         working-directory: ./kshitij-portfolio
-        run: npm ci
+        run: rm -f package-lock.json
+
+      - name: Install dependencies (ignore peer deps)
+        working-directory: ./kshitij-portfolio
+        run: npm install --legacy-peer-deps
 
       - name: Build project
         working-directory: ./kshitij-portfolio
