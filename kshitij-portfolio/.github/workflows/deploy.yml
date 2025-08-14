@@ -21,7 +21,7 @@ jobs:
 
       - name: Install dependencies (ignore peer deps)
         working-directory: ./kshitij-portfolio
-        run: npm install --force
+        run: npm install --legacy-peer-deps
 
       - name: Build project
         working-directory: ./kshitij-portfolio
